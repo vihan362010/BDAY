@@ -1,0 +1,84 @@
+import streamlit as st
+import time
+import random
+
+st.set_page_config(page_title="Happy Birthday 💖", page_icon="🎂")
+
+# --- Custom Background / Header ---
+st.markdown(
+    """
+    <style>
+    .title {
+        text-align: center;
+        font-size: 40px;
+        color: hotpink;
+        font-family: 'Comic Sans MS', cursive;
+    }
+    .message {
+        font-size: 18px;
+        padding: 15px;
+        line-height: 1.5;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# --- Title ---
+st.markdown('<div class="title">🎉 Happy Birthday! 🎉</div>', unsafe_allow_html=True)
+
+# --- Input Name ---
+name = st.text_input("💖 What's your name, birthday girl?")
+
+if name:
+    st.image("https://i.postimg.cc/YCVP58HC/temp-Imagey-MF6k5.avif", caption="You're truly special!", use_column_width=True)
+    
+    st.success(f"Welcome, {name}! 🎂 Let's make this day magical!")
+    time.sleep(1.5)
+
+    # Heart animation using emojis
+    heart_art = """
+    ❤️      ❤️  
+   ❤️❤️    ❤️❤️ 
+  ❤️❤️❤️  ❤️❤️❤️
+   ❤️❤️❤️❤️❤️❤️ 
+    ❤️❤️❤️❤️❤️  
+     ❤️❤️❤️❤️   
+      ❤️❤️❤️    
+        ❤️      
+    """
+    st.markdown(f"<pre style='text-align: center; color: red; font-size: 20px;'>{heart_art}</pre>", unsafe_allow_html=True)
+
+    st.markdown("---")
+
+    # Embed a custom birthday video (YouTube or file)
+    st.video("https://youtube.com/shorts/ai7qdMhL-rU?feature=share")  # Replace with a personal link if needed
+
+    # Custom message
+    st.markdown(f"""
+    <div class="message">
+    Dear {name},<br><br>
+    Hello mam saab salute, i am so happy that i found you i cant express what you mean to me. Even if you hate birthdays i will hype you up for your every bday. I will make sure we end up celebrating all bdays together.
+
+coming to you,
+you are the prettiest girl both from outside and inside, you made me feel loved like no one else had ever. You are the bestest person i have ever seen, i am grateful to have you in my life. You are so aodjijdiwhfieihighiegi i cant express how precious you are.
+
+Happy Birthday, my love.
+
+Always yours,  
+~ Your Babyyyyy 💌
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Star Rain 🎇
+    st.subheader("✨ Magic Stars Just For You ✨")
+    for _ in range(10):
+        st.write("".join(random.choices(["🌟", "💫", "✨", "🪄", "⭐"], k=30)))
+        time.sleep(0.2)
+
+    # Final image
+    st.image("https://i.imgur.com/lA3Qh0K.jpg", caption="Always here for you 💕", use_column_width=True)
+
+    st.markdown('<div class="title">🎈 Happy Birthday Again! 🎈</div>', unsafe_allow_html=True)
+
+    st.balloons()
